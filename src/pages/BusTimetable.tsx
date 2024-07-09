@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import busArrivals from './busArrivals';
-import {BusStop} from './busDataInterfaces'
-import BusStopTable from './busStops';
+import busArrivals from '../busArrivals';
+import {BusStop} from '../busDataInterfaces'
+import BusStopTable from '../busStops';
 
 
 
@@ -10,7 +10,7 @@ async function getBuses(postcode: string): Promise<BusStop[]> {
 }
 
 
-function App(): React.ReactElement {
+function BusTimetable(): React.ReactElement {
     const [postcode, setPostcode] = useState<string>("");
     const [busStopList, setBusStopList] = useState<BusStop[]>([]);
 
@@ -45,4 +45,4 @@ function App(): React.ReactElement {
 
 
 
-export default App;
+export default BusTimetable;
