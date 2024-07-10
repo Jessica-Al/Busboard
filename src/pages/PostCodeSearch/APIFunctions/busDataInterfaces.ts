@@ -3,6 +3,7 @@ export interface Bus {
     busRoute: string;
     destination: string;
     minutesToArrival: number;
+    directionIsInbound: boolean;
 }
 
 export interface BusStop {

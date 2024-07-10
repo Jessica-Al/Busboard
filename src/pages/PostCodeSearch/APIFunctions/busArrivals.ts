@@ -12,6 +12,7 @@ interface TFLStopPointPropertiesResponseType {
   lineId: string;
   destinationName: string;
   stationName: string;
+  direction: string;
 }
 
 interface TFLStopPointResponseType {
@@ -85,30 +86,15 @@ export default async function busArrivals(inputPostcode: string): Promise<BusSto
 
         const buses : Bus[] = [];
 
-        //returnString += `Bus stop: ${responseJson[0].stationName}</br>`;
-
         for (let i = 0; i < 5; i++) {
           if (i >= responseJson.length) {
             break
           }
-
-          const bus : Bus = {busNumber: i+1, busRoute: responseJson[i].lineId, destination: responseJson[i].destinationName, minutesToArrival: Math.round((responseJson[i].timeToStation)/60)};
+          const bus : Bus = {busNumber: i+1, busRoute: responseJson[i].lineId, destination: responseJson[i].destinationName, minutesToArrival: Math.round((responseJson[i].timeToStation)/60), directionIsInbound: (responseJson[i].direction == 'inbound')};
           buses.push(bus);
-
-          console.log(`\nBus number: ${i+1}`);
-          //returnString += `\nBus number: ${i+1}\n`;
-          console.log(`Bus route: ${responseJson[i].lineId}`);
-          //returnString += `Bus route: ${responseJson[i].lineId}\n`;
-          console.log(`Destination: ${responseJson[i].destinationName}`);
-          //returnString += `Destination: ${responseJson[i].destinationName}\n`;
-          console.log(`Minutes to arrival: ${Math.round((responseJson[i].timeToStation)/60)}`);
-          //returnString += `Minutes to arrival: ${Math.round((responseJson[i].timeToStation)/60)}\n`;
-
         }
 
         busStopList.push({stopName: responseJson[0].stationName, buses: buses});
-
-        //[{busStop: string, buses: [busNumber: number, busRoute: string, destination: string, minutesToArrival: number}] ]
 
       } catch (error) {
         console.error(error);
