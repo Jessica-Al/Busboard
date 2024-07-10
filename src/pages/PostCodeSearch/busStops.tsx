@@ -1,4 +1,4 @@
-import { Bus } from "./busDataInterfaces";
+import { Bus } from "./APIFunctions/busDataInterfaces";
 
 interface BusStopTableProps {
     buses: Bus[];

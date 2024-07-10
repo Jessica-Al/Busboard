@@ -1,4 +1,4 @@
-import busImage from '../../src/London_Bus.jpg';
+import busImage from './London_Bus.jpg';
 import styled from "styled-components";
 import React, { useState } from 'react';
 
@@ -64,12 +64,6 @@ function TabGroup() {
       <ChooseResult active={active} />
     </>
   );
-}
-
-enum TabChoices {
-  FunPic = 'Fun picture',
-  BusStats = 'Bus stats',
-  BusInfo = 'Bus info',
 }
 
 interface Props {

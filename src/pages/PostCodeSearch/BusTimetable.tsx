@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import busArrivals from '../busArrivals';
-import {BusStop} from '../busDataInterfaces'
-import BusStopTable from '../busStops';
+import busArrivals from './APIFunctions/busArrivals';
+import {BusStop} from './APIFunctions/busDataInterfaces'
+import BusStopTable from './busStops';
 
 
 
