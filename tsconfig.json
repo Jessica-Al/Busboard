@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "src/pages/PostCodeSearch/APIFunctions/busArrivals.ts", "src/pages/PostCodeSearch/APIFunctions/busArrivals.ts"  ]
+, "src/pages/PostCodeSearch/APIFunctions/busArrivals.ts", "src/pages/PostCodeSearch/APIFunctions/busArrivals.ts", "src/pages/PostCodeSearch/APIFunctions/busRoutes.ts"  ]
 }
